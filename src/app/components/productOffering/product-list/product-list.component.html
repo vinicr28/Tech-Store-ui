@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="start">
+    <h1 class="title">Product List</h1>
+    <button mat-raised-button color="primary" *ngIf="role" (click)="openDialogCreate()">Add product</button>
+  </div>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. TV Samsung" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+            <td mat-cell *matCellDef="let element">$ {{element.unitPrice}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-icon-button [disabled]="hiddeInactive(element.state)"
+                (click)="openDialog(element.id)">
+                <mat-icon [color]="iconColor" class="icon">add_shopping_cart</mat-icon>
+              </button> 
+              <button class="edit" mat-icon-button *ngIf="role" color="warn"
+                (click)="openDialogEdit(element.id)">
+                <mat-icon>edit</mat-icon>
+              </button> 
+            </td>                                        
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <div class="paginator">
+          <span>page: {{pageIndex}} of 100</span>
+          <div class="arrow">
+            <a (click)="previousPage()"><mat-icon>chevron_left</mat-icon></a>
+            <a (click)="nextPage()"><mat-icon>chevron_right</mat-icon></a>
+          </div>
+        </div>
+      </div>    
+</div>

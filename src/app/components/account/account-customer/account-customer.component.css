@@ -1,0 +1,32 @@
+.container {
+    width: 700px;
+    height: 330px;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.input {
+    display: flex;
+    width: 90%;
+    margin: 1rem 0;
+    
+}
+
+.full-width {
+    width: 100%;
+    margin: 0 .5rem;
+}
+
+mat-card-content {
+    font-weight: 400;
+}

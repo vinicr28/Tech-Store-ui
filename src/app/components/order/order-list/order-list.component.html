@@ -1,0 +1,40 @@
+<div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.instant | date: 'dd/MM/YYYY'}} </td>
+        </ng-container>
+      
+        
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.deliveryAddress.street}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="qtd">
+          <th mat-header-cell *matHeaderCellDef> Qtd Products </th>
+          <td mat-cell *matCellDef="let element"> {{getQtd(element.items)}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+          <th mat-header-cell *matHeaderCellDef> Details </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="openDialog(element.id)" [disabled]="hide">
+              <mat-icon>remove_red_eye</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>

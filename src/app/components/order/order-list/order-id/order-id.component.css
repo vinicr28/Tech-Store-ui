@@ -1,0 +1,91 @@
+.container {
+    min-width: 700px;
+    min-height: 500px;
+    max-height: 500px;
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 5px 0 5px -5px #333;
+    z-index: 10;
+}
+
+.right {
+    width: 50%;
+    background-color: rgb(240, 240, 240);
+    padding: 1rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.label {
+    color: gray;
+    font-weight: 500;
+}
+
+.order {
+    font-weight: 550;
+}
+
+.discount {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.total {
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+.total h3 {
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+.total h1 {
+    font-size: 30px;
+    font-weight: 550;
+    color: darkgreen;
+    padding: 0;
+    margin: 0;
+}
+
+.scroll {
+    overflow-y: scroll;
+    max-height: 70%;
+}
+
+.items{
+    display: flex;
+    width: 95%;
+    height: 110px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .3rem;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.items img {
+    height: 100px;
+}
+
+button{
+    position: absolute;
+    bottom: 15px;
+    max-width: 320px;
+}

@@ -1,0 +1,60 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav mat-elevation-z8" mode="side">
+    <img class="logoicon" src="assets\img\logoicon.svg" alt="NavBar image">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item class="menu-link" routerLink="home">
+        <i class="material-icons">home</i>
+        <span>Home</span>
+      </a>
+      <a mat-list-item routerLink="products">
+        <i class="material-icons">store</i>
+        <span>Products</span>
+      </a>
+      <a mat-list-item routerLink="orders">
+        <i class="material-icons">shopping_cart</i>
+        <span>Orders</span>
+      </a>
+      <a mat-list-item routerLink="address">
+        <i class="material-icons">local_shipping</i>
+        <span>Addresses</span>
+      </a>
+      <a mat-list-item routerLink="account">
+        <i class="material-icons">person</i>
+        <span>Account</span>
+      </a>
+      <a mat-list-item routerLink="admin" *ngIf="role">
+        <i class="material-icons">build</i>
+        <span>Admin</span>
+      </a>
+      <a mat-list-item (click)="logout()">
+        <i class="material-icons">exit_to_app</i>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer #drawer2 class="shopping-cart-sidenav" mode="over" position="end">
+    <router-outlet name="sidenav"></router-outlet> 
+  </mat-drawer>
+
+  <!-- header -->
+  <div class="sidenav-content">
+    <mat-toolbar class="header">
+      <button
+        class="menu"
+        (click)="drawer.toggle()"
+        mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="header-name" >
+        <img src="assets\img\logo.svg" alt="NavBar image">
+      </div>
+      <button mat-icon-button 
+      class="btn-cart"
+      (click)="drawer2.toggle()"
+      [routerLink]="['', { outlets: {sidenav: ['cart'] }}]">
+      <mat-icon  [matBadgeDisabled]="false" [matBadge]="notification()" matBadgeColor="warn">shopping_cart</mat-icon></button>
+    </mat-toolbar>
+    <router-outlet></router-outlet> 
+  </div>
+</mat-drawer-container>

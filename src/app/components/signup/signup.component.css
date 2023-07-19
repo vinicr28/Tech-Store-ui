@@ -1,0 +1,42 @@
+.container {
+    height: 100%;
+    background-image: url("../../../assets/img/background2.svg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 30rem;
+    margin: auto;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 2rem 1rem;
+}
+
+.form img {
+    width: 100%;
+    height: 4.5rem;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.form button {
+    margin-top: 1rem;
+}
+
+.route-registration {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+

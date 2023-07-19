@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="title">Update Product</h1>
+    <div class="form">
+        <mat-form-field class="full-width">
+            <mat-label>Product Name</mat-label>
+            <input matInput 
+            [formControl]="productName"
+            required
+            [(ngModel)]="product.productName"
+            name="productName" 
+            type="text" >
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Product Price</mat-label>
+            <input matInput
+            [formControl]="unitPrice"
+            required
+            [(ngModel)]="product.unitPrice"
+            name="unitPrice" 
+            prefix="$"
+            mask="separator.2"
+            separatorLimit="10000"
+            [leadZero]="true"
+            type="text" >
+        </mat-form-field>
+
+        <p class="label">Status</p>
+        <mat-radio-group aria-label="Ready to sell" class="indicator">
+            <mat-radio-button [checked]="!product.sellIndicator" (click)="setSellIndicator(false)" value="1">Active</mat-radio-button>
+            <mat-radio-button [checked]="product.sellIndicator" (click)="setSellIndicator(true)" value="2">Inactive</mat-radio-button>
+        </mat-radio-group>
+
+        <button class="full-width mat-elevation-z4" (click)="updateProduct()"
+        mat-stroked-button color="primary" [disabled]="!validateField()">Update product</button>
+
+        <button class="full-width mat-elevation-z4" (click)="deleteProduct()"
+        mat-raised-button color="warn">Delete product</button>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="left">
+        <h1 class="order">order - {{order.id}}</h1>
+        <div class="date full-width">
+            <h3 class="label">Date</h3>
+            <h3>{{order.instant | date: 'medium'}}</h3>
+        </div>
+        <div class="address full-width">
+            <h3 class="label">Delivery address</h3>
+            <h3>{{order.deliveryAddress.zipCode}} - {{order.deliveryAddress.street}}</h3>
+        </div>
+        <div class="discount full-width">
+            <h3 class="label">Discount</h3>
+            <h1>${{totalDiscount()}}</h1>
+        </div>
+        <div class="total full-width">
+            <h3 class="label">Total</h3>
+            <h1>${{totalPrice()}}</h1>
+        </div>
+    </div>
+    <div class="right">
+        <div class="scroll">
+            <div class="items" *ngFor="let item of order.items">
+                <img src="../../../../assets/img/product.svg" alt="product image">
+                 <p>{{item.id.productOffering.productName}}</p>
+                <p>{{item.quantity}}</p>
+                <p>${{item.totalPrice.toFixed(2)}}</p> 
+            </div>
+        </div>
+        <button class="full-width" mat-raised-button color="warn" (click)="delete()">Cancel order</button>
+    </div>
+</div>

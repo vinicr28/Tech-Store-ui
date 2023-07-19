@@ -1,0 +1,19 @@
+.container{
+    width: 450px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid orange;
+    padding: 1rem;
+}
+
+.full-width {
+    width: 100%;
+    margin: 1rem auto ;
+}
+
+mat-option {
+    color: black;
+}

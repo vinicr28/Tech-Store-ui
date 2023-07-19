@@ -1,0 +1,18 @@
+.container {
+    width: 400px;
+    height: 300px;
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+ 
+.full-width {
+    width: 100%;
+}
+
+button {
+    margin: 1rem;
+}

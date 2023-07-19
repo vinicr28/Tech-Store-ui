@@ -1,0 +1,61 @@
+
+.container {
+  height: 100%;
+}
+
+.header {
+  background: linear-gradient(270deg, rgba(235,236,240,1) 0%, rgba(255,255,255,1) 50%, rgba(235,236,240,1) 100%);
+}
+
+.menu {
+  color: black;
+}
+
+.header-name {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+ 
+.header-name img {
+  width: 100%;
+  height: 4.5rem;
+  padding-right: 3rem;
+}
+
+.sidenav {
+  width: 13rem;
+  color: white;
+  background-image: url("../../../assets/img/background.svg");
+  background-size: cover;
+}
+
+.logoicon {
+  width: 100%;
+  height: 5rem; 
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sidenav span {
+  color: black !important;
+}
+
+.sidenav i {
+  margin-right: 1rem;
+  color: black
+}
+
+.shopping-cart-sidenav {
+  width: 30rem;
+  height: 100vh;
+  color: white;
+  background-image: url("../../../assets/img/background.svg");
+  background-size: cover;
+}
+
+
+
+
+

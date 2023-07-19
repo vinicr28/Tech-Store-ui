@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 >Delivery Address</h1>
+    <mat-form-field class="full-width">
+        <mat-label>Chosse the delivery address</mat-label>
+        <mat-select class="full-width">
+            <mat-option class="full-width" value="valid" (click)="selectAddress(address)"
+            *ngFor="let address of addressesList">{{address.zipCode}} - {{address.street}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button class="full-width mat-elevation-z4" mat-stroked-button color="primary" (click)="onNoClick()">Select address</button>
+</div>

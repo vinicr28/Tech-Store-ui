@@ -1,0 +1,26 @@
+<div class="container">
+    <img src="../../../../assets/img/product.svg" alt="Product image">
+    <div class="right">
+        <div class="text">
+            <h1>{{product.productName}}</h1>
+            <h2>$ {{product.unitPrice}}</h2>
+        </div>
+        <div class="select-qtd mat-elevation-z4">
+            <button mat-icon-button (click)="removeQtd()">
+                <mat-icon>remove</mat-icon>
+            </button>
+            <h3>{{productQtd}}</h3>
+            <button mat-icon-button (click)="addQtd()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <button class="full-width mat-elevation-z4"
+        (click)="addToCart()"
+        [routerLink]="['', { outlets: {sidenav: null }}]"
+        mat-stroked-button color="primary">Add to cart</button>
+
+        <button class="full-width mat-elevation-z4"
+        (click)="onNoClick()"
+        mat-stroked-button color="warn">Cancel</button>
+    </div>
+</div>

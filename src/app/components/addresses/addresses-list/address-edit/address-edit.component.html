@@ -1,0 +1,85 @@
+<div class="container">
+    <form class="form">
+        <h2>Update Address</h2>
+
+        <mat-form-field class="full-width">
+            <mat-label>Zip Code</mat-label>
+            <input 
+            [formControl]="zipCode"
+            required
+            [(ngModel)]="address.zipCode"
+            name="zipcode" 
+            type="number"
+            matInput 
+            placeholder="Ex. 13333244"
+            >
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Street</mat-label>
+          <input 
+          [formControl]="street"
+          required
+          [(ngModel)]="address.street"
+          name="Street" 
+          matInput 
+          placeholder="Ex. Rua Ericsson Indaiatuba">
+        </mat-form-field>
+      
+        <mat-form-field class="full-width">
+            <mat-label>House Number</mat-label>
+            <input 
+            [formControl]="houseNumber"
+            required
+            [(ngModel)]="address.houseNumber"
+            name="House Number" 
+            type="number"
+            matInput 
+            placeholder="Ex. 123"
+            >
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Neighborhood</mat-label>
+            <input 
+            [formControl]="neighborhood"
+            required
+            [(ngModel)]="address.neighborhood"
+            name="neighborhood" 
+            type="text" 
+            matInput 
+            placeholder="Ex. JD Ericsson">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Country</mat-label>
+            <input 
+            [formControl]="country"
+            required
+            [(ngModel)]="address.country"
+            name="country" 
+            type="text" 
+            matInput 
+            placeholder="Ex. Brasil">
+          </mat-form-field>
+
+          <mat-form-field>
+          <mat-label>Address Type</mat-label>
+          <mat-select [(ngModel)]="address.addressType" name="select">
+            <mat-option (click)="setAddressType('HomeAddress')" value="valid">Home Address</mat-option>
+            <mat-option (click)="setAddressType('BusinessAddress')" value="valid">Business Address</mat-option>
+            <mat-option (click)="setAddressType('ShippingAddress')" value="valid">Shipping Address</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+          <button 
+          (click)="update()"
+          [disabled]="!validateField()"
+          class="full-width mat-elevation-z4" mat-stroked-button color="primary">Update</button>
+
+          <button
+          (click)="onNoClick()"
+          class="full-width mat-elevation-z4" 
+          mat-stroked-button color="warn">Close</button>
+      </form>
+</div>

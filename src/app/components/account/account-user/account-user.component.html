@@ -1,0 +1,13 @@
+<div class="container mat-elevation-z8">
+    <div class="circle">
+        <img src="assets\img\perfil.svg" alt="user image">
+    </div>
+    <div class="texts">
+        <h3 class="email">{{user.email}}</h3>
+        <p>{{user.customer.customerName}}</p>
+    </div>
+    <button (click)="openDialog()"
+          class="mat-elevation-z4" 
+          mat-stroked-button color="primary">Change Password</button>
+</div>
+

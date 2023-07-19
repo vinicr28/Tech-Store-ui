@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rampup-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rampup-frontend
+  template:
+    metadata:
+      labels:
+        app: rampup-frontend
+    spec:
+      containers:
+        - name: rampup-frontend
+          image: frontend:final
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+            

@@ -1,0 +1,42 @@
+<div class="container">
+    <form class="form">
+        <img class="logoicon" src="assets\img\logoicon.svg" alt="NavBar image">
+
+        <mat-form-field class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input 
+          [formControl]="email"
+          required
+          [(ngModel)]="creds.email" 
+          name="email" 
+          matInput 
+          placeholder="Ex. xxxx@email.com">
+        </mat-form-field>
+      
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input 
+            [formControl]="password"
+            required
+            [(ngModel)]="creds.password" 
+            name="password" 
+            type="password" 
+            matInput 
+            placeholder="Ex. 123"
+            matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button 
+          (click)="singIn()"
+          [disabled]="!validateField()"
+          class="full-width mat-elevation-z4" mat-stroked-button color="warn">Login</button>
+
+          <div class="route-registration">
+            <span>Not Registered? <a routerLink="../signup">Sign Up!</a></span>
+          </div>
+          
+      </form>
+</div>
